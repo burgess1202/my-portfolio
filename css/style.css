@@ -1,0 +1,221 @@
+/* --- 全域 & 基礎設定 --- */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0; /* 清除 body 的預設邊距 */
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 960px;
+    margin: 0 auto; /* 改為 0 auto，讓上下由各區塊自己決定 */
+}
+
+/* --- 頁首 Header & 導覽列 Nav --- */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex;          /* 【正確】指令下在「雞蛋盒」<ul> 上！ */
+    justify-content: center;/* Flexbox 超好用的屬性：讓所有項目在主軸(水平)置中 */
+    gap: 20px;              /* 項目之間的間距 */
+}
+
+nav ul li {
+
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none; /* 清除超連結的底線 */
+}
+
+nav a:hover {
+    color: #d0d0d0;
+    cursor: pointer;
+}
+
+/* --- 主要內容 Main & 區塊 Section --- */
+main {
+    padding: 20px 0;
+}
+
+section {
+    background: #fff;
+    margin-bottom: 20px; /* 區塊之間的下邊距 */
+    padding: 20px;
+    border-radius: 5px; /* 加個小圓角，看起來比較舒服 */
+}
+
+section h2 {
+    color: #0056b3;
+}
+
+/* --- 頁尾 Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    color: #666;
+}
+
+/* --- 關於我 Section --- */
+.about-section {
+    display: flex;         /* 啟用 Flexbox 佈局！ */
+    align-items: center;   /* 讓子項目在交叉軸(垂直)方向置中 */
+    gap: 20px;             /* 在子項目之間建立 20px 的間距 */
+}
+
+.profile-pic {
+    width: 150px;          /* 設定圖片寬度 */
+    height: 150px;         /* 設定圖片高度 */
+    border-radius: 50%;    /* 關鍵！將圖片變成圓形 */
+    object-fit: cover;     /* 確保圖片在不變形的情況下填滿容器 */
+}
+
+.about-text {
+    flex: 1; /* 讓文字區塊佔滿所有剩餘的空間 */
+}
+
+/* --- 技能專長 Section --- */
+.skills-list {
+    list-style: none; /* 移除項目符號 */
+    padding: 0;
+    display: flex;      /* 再次啟用 Flexbox！ */
+    flex-wrap: wrap;    /* 允許項目換行 */
+    gap: 10px;          /* 設定項目之間的間距 */
+}
+
+.skills-list li {
+    background: #0056b3; /* 標籤背景色 (深藍) */
+    color: #fff;         /* 標籤文字顏色 (白) */
+    padding: 10px 15px;  /* 標籤內邊距 (上下10, 左右15) */
+    border-radius: 5px;  /* 標籤圓角 */
+    font-weight: bold;   /* 字體加粗 */
+}
+
+
+.skills-list li:hover {
+    background: #007bff;
+    cursor: pointer;
+}
+
+
+/* --- 作品集 Section --- */
+.portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;       /* 允許卡片換行 */
+    gap: 20px;             /* 卡片之間的間距 */
+}
+
+.card {
+    background: #fdfdfd;  /* 卡片背景用稍微白一點的顏色 */
+    border: 1px solid #eee; /* 給卡片一個非常淺的邊框 */
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 加上非常細微的陰影，製造立體感 */
+
+    /* 這裡是網格佈局的關鍵！ */
+    /* flex-basis 是項目在主軸上的「基本」尺寸 */
+    /* 我們設定為 48%，讓一行可以放兩張卡片 (48% + 48% + 4% gap) */
+    flex-basis: 48%;
+    transition: all 0.3s ease;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #0056b3;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* 讓卡片向上移動 5px */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 陰影變得更明顯 */
+}
+
+
+/* --- 響應式設計 (Media Queries) --- */
+/* 當螢幕寬度小於等於 768px 時，套用以下樣式 */
+@media (max-width: 768px) {
+
+    /* 1. 先從整體佈局調整 */
+    .container {
+        width: 90%; /* 在手機上，讓容器寬度佔滿一點，邊距小一點 */
+    }
+
+    /* 2. 調整 About Me 區塊，從並排變堆疊 */
+    .about-section {
+        flex-direction: column; /* 這是關鍵！改變 Flexbox 的主軸方向為垂直 */
+        text-align: center;   /* 順便讓文字置中，看起來更整齊 */
+    }
+
+    /* 3. 調整作品集卡片，從一行兩張變一張 */
+    .card {
+        flex-basis: 100%; /* 讓卡片的基準寬度變成 100%，強制換行 */
+    }
+
+    /* 4. (可選) 稍微調整一下導覽列和標題，讓它們在小螢幕上更緊湊 */
+    nav ul {
+        gap: 15px; /* 縮小導覽列項目間距 */
+    }
+
+    header h1 {
+        font-size: 28px; /* 稍微縮小主標題字體 */
+    }
+}
+
+
+/* --- 聯絡表單 Section --- */
+.contact-form {
+    max-width: 600px; /* 限制表單最大寬度，避免在超大螢幕上拉太開 */
+    margin: 0 auto;   /* 讓表單本身在 section 內置中 */
+}
+
+.form-group {
+    margin-bottom: 20px; /* 每個輸入框群組的下邊距 */
+}
+
+.form-group label {
+    display: block;  /* 讓 label 獨佔一行，跑到 input 的上方 */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;           /* 寬度填滿容器 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;       /* 避免在手機上輸入時，畫面自動放大 */
+    font-family: inherit;  /* 繼承 body 的字體 */
+}
+
+.submit-btn {
+    display: inline-block;
+    background: #0056b3;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* 再次用上我們的 transition 好夥伴 */
+}
+
+.submit-btn:hover {
+    background: #007bff;
+}

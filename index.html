@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的個人網站</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>林東駿</h1>
+            <p>一個對解決問題充滿熱情的準軟體工程師</p>
+            <nav>
+                <ul>
+                    <li><a href="#about">關於我</a></li>
+                    <li><a href="#skills">技能專長</a></li>
+                    <li><a href="#portfolio">作品集</a></li>
+                    <li><a href="#contact">聯絡方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+        <main>
+        <div class="container">
+            <section id="about" class="about-section">
+                <img src="images/tenor.gif" alt="我的大頭照" class="profile-pic">
+                <div class="about-text">
+                    <h2>關於我</h2>
+                    <p>這裡放您的自我介紹，可以多寫一點，描述您的背景、學習動機、以及對未來的職涯規劃等等。試著讓內容稍微長一點，這樣排版看起來會比較準確。</p>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>技能專長</h2>
+                <ul class="skills-list">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>Git & GitHub</li>
+                    <li>React</li>
+                    <li>Node.js</li>
+                    </ul>
+            </section>
+
+            <section id="portfolio">
+                <h2>作品集</h2>
+                <div class="portfolio-grid">
+                    <div class="card">
+                        <h3>專案標題一</h3>
+                        <p>這是一個專案的簡短描述，說明這個專案的目標、使用的技術（例如：HTML, CSS）以及您學到什麼。</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>專案標題二</h3>
+                        <p>這是第二個專案的描述。即使是您在課程中做的小練習，只要您能清楚地描述它，都可以放上來。</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>個人履歷網站</h3>
+                        <p>這就是您現在正在打造的網站！它本身就是一個最棒的作品。您可以描述您如何規劃、使用了哪些技術來完成它。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2>聯絡我</h2>
+                <p>對我的作品有興趣嗎？歡迎隨時透過下列表單與我聯繫！</p>
+                <form action="mailto:jacky52572598012@gmail.com" method="POST" enctype="text/plain" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">電子郵件</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">訊息</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">送出訊息</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 [您的名字]. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
