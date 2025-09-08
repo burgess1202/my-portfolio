@@ -219,3 +219,19 @@ footer {
 .submit-btn:hover {
     background: #007bff;
 }
+
+/* --- 作品集卡片內的 Tag 樣式 --- */
+.tags-container {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tags-container span {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
